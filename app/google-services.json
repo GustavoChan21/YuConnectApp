@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "441588410796",
+    "project_id": "yuconnect-e8987",
+    "storage_bucket": "yuconnect-e8987.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441588410796:android:ed8f7c0c5d3f80ad55b209",
+        "android_client_info": {
+          "package_name": "com.gcdev.yuconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441588410796-56tbdttfclfu8gcbrnofsancscop6mh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWit2NR41ORFwLeowKqErL67P_pyqNC3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441588410796-56tbdttfclfu8gcbrnofsancscop6mh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
