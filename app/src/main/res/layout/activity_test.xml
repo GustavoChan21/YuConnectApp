@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/poppins_bold"
+
             android:text="Buenas Noches"
             android:textColor="@color/black"
             android:textSize="11sp"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="2dp"
-            android:fontFamily="@font/poppins_bold"
+
             android:text="Gustavo AC"
             android:textColor="#235789"
             android:textSize="10sp"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_bold"
+
             android:text="Ubicación: "
             android:textColor="@color/black"
             android:textSize="11sp"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="4dp"
-            android:fontFamily="@font/poppins_bold"
+
             android:text="Tekax, Yucatán"
             android:textColor="@color/black"
             android:textSize="9sp"

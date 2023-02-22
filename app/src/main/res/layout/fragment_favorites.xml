@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#75dddd"
+    android:background="#F7FEFA"
     tools:context=".menus.FavoritesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:gravity="center"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="30sp"

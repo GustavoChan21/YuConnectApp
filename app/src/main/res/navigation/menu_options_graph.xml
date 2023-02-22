@@ -44,4 +44,19 @@
         android:name="com.gcdev.yuconnect.TestActivity"
         android:label="activity_test"
         tools:layout="@layout/activity_test" />
+    <activity
+        android:id="@+id/categoryResultActivity"
+        android:name="com.gcdev.yuconnect.CategoryResultActivity"
+        android:label="activity_category_result"
+        tools:layout="@layout/activity_category_result" />
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.gcdev.yuconnect.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.gcdev.yuconnect.DetailActivity"
+        android:label="activity_detail"
+        tools:layout="@layout/activity_detail" />
 </navigation>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#ffffff"
     android:layout_gravity="center"
     android:fillViewport="true"
     tools:context=".menus.HomeFragment">
@@ -16,12 +16,10 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/welcomeMsjContainer"
-            android:layout_width="140dp"
-            android:layout_height="66dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/bg_white_radius_30"
-            app:layout_constraintEnd_toStartOf="@+id/locationContainer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
@@ -34,26 +32,25 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="Buenas Noches"
                 android:textColor="@color/black"
-                android:textSize="11sp"
-                android:textStyle="bold"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.276" />
+                app:layout_constraintVertical_bias="0.2" />
 
             <TextView
                 android:id="@+id/tv_username_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Invitado"
-                android:textColor="#235789"
-                android:textSize="10sp"
-                android:textStyle="bold"
+                android:text="Acceso: Invitado"
+                android:textColor="#00695C"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -62,127 +59,183 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="3dp"
                 android:background="@drawable/ic_menu_profile"
                 android:backgroundTint="#235789"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/label_msj"
+                app:layout_constraintHorizontal_bias="0.077"
+                app:layout_constraintStart_toEndOf="@+id/tv_username_data"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/locationContainer"
-            android:layout_width="140dp"
-            android:layout_height="66dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:background="@drawable/bg_white_radius_30"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.851"
-            app:layout_constraintStart_toEndOf="@+id/welcomeMsjContainer"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
-
-            <ImageView
-                android:id="@+id/icon_location_home"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="6dp"
-                android:background="@drawable/ic_location_home"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/label_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Ubicación: "
                 android:textColor="@color/black"
-                android:textSize="11sp"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/icon_location_home"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHorizontal_bias="0.151"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.185" />
 
             <TextView
                 android:id="@+id/tv_location_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Tekax, Yucatán"
+                android:text="Valladolid, Yucatán"
                 android:textColor="@color/black"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/icon_location_home"
-                app:layout_constraintTop_toBottomOf="@+id/label_location"
-                app:layout_constraintVertical_bias="0.09" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/services_container2"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="14dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/locationContainer">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_parent2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:listitem="@layout/parent_item" />
+                app:layout_constraintTop_toBottomOf="@+id/label_location"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/icon_location_home"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/ic_location_home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_location_data"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!--   Container of Recomendations about Services or Trending Topics    -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/services_container"
+            android:background="@drawable/bg_green_light_rounded"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="130dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="14dp"
-            android:layout_marginBottom="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/ads_container"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/services_container2">
+            app:layout_constraintTop_toBottomOf="@+id/locationContainer">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Servicios"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="8dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_parent"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginHorizontal="6dp"
+                android:padding="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:listitem="@layout/parent_item" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:listitem="@layout/child_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--   Container of Recomendations about Services or Trending Topics    -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ads_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="64dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_green_light_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/services_container">
+
+            <TextView
+                android:id="@+id/addCategory1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Promociones"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_ads"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addCategory1"
+                tools:ignore="MissingConstraints"
+                tools:listitem="@layout/ad_item" />
+
+            <TextView
+                android:id="@+id/addCategory2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Recomendaciones"
+                android:textColor="@color/black"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_ads" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_ads2"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addCategory2"
+                tools:ignore="MissingConstraints"
+                tools:listitem="@layout/ad_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
