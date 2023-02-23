@@ -13,16 +13,16 @@ class FragmentTabPageAdapter(
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(fragmentManager, lifecycle){
     override fun getItemCount(): Int {
-        return 3
+        return 6
     }
 
     override fun createFragment(position: Int): Fragment {
         return if (position == 0)
             UserInfoFragment()
         else if (position == 1)
-            CollaboratorInfoFragment()
+            UserInfoFragment()
         else
-            PromotionsFragment()
+            UserInfoFragment()
     }
 
 }

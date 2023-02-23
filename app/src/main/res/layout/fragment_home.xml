@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
+    android:scrollbars="vertical"
     android:layout_gravity="center"
+    android:overScrollMode="never"
     android:fillViewport="true"
     tools:context=".menus.HomeFragment">
 
@@ -135,7 +137,7 @@
             android:id="@+id/services_container"
             android:background="@drawable/bg_green_light_rounded"
             android:layout_width="0dp"
-            android:layout_height="130dp"
+            android:layout_height="120dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="14dp"
@@ -180,7 +182,8 @@
             android:layout_marginHorizontal="14dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="64dp"
-            android:padding="8dp"
+            android:overScrollMode="never"
+            android:scrollbars="vertical"
             android:background="@drawable/bg_green_light_rounded"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -191,12 +194,12 @@
                 android:id="@+id/addCategory1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Promociones"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins_bold"
-                android:textSize="16sp"
+                android:text="Promociones"
                 android:textColor="@color/black"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -204,8 +207,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_ads"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="176dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addCategory1"
@@ -219,9 +223,9 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="Recomendaciones"
                 android:textColor="@color/black"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rv_ads" />
@@ -229,13 +233,14 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_ads2"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="176dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addCategory2"
                 tools:ignore="MissingConstraints"
-                tools:listitem="@layout/ad_item" />
+                tools:listitem="@layout/ad_item"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -26,9 +26,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         adapter = FragmentTabPageAdapter(requireActivity().supportFragmentManager, lifecycle)
 
-        tabLayout.addTab(tabLayout.newTab().setText("User Information"))
-        tabLayout.addTab(tabLayout.newTab().setText("Enterprise Information"))
+        tabLayout.addTab(tabLayout.newTab().setText("Información"))
+        tabLayout.addTab(tabLayout.newTab().setText("Ubicación"))
         tabLayout.addTab(tabLayout.newTab().setText("Menu"))
+        tabLayout.addTab(tabLayout.newTab().setText("Comentarios"))
+        tabLayout.addTab(tabLayout.newTab().setText("Configuración"))
 
         viewPager2.adapter = adapter
 

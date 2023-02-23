@@ -21,13 +21,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView.adapter = ServicesAdapter(ServiceSetData.setService())
         recyclerView.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
 
-        val recyclerView1 = requireView().findViewById<RecyclerView>(R.id.rv_ads2)
-        recyclerView1.adapter = AdsAdapter(AdSetData.setAds())
-        recyclerView1.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
-
         val recyclerView2 = requireView().findViewById<RecyclerView>(R.id.rv_ads)
         recyclerView2.adapter = AdsAdapter(AdSetData.setAds())
         recyclerView2.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
+
+        val recyclerView21 = requireView().findViewById<RecyclerView>(R.id.rv_ads2)
+        recyclerView21.adapter = AdsAdapter(AdSetData.setAds())
+        recyclerView21.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
+
 
     }
 
