@@ -9,7 +9,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:text="Buscador"
+        android:text="Buscador Result"
         android:textSize="22sp"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_bold"
