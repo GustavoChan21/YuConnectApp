@@ -1,4 +1,4 @@
-package com.gcdev.yuconnect.adapter.store
+package com.gcdev.yuconnect.adapter.adsList
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.gcdev.yuconnect.AdsDetailActivity
 import com.gcdev.yuconnect.DetailActivity
 import com.gcdev.yuconnect.R
+import com.gcdev.yuconnect.adapter.store.StoreData
 
-class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapter.ViewHolder>() {
+class AdsListAdapter(var adList: List<AdsListData>) : RecyclerView.Adapter<AdsListAdapter.ViewHolder>() {
     //this is to do dinamic the recyclerview about first page like results of category, planets or other list about some category topic
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -33,17 +35,17 @@ class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapte
     //here we serialice our list of items
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.storeName.text = menu[position].storeName
-        holder.iconCategory.setImageResource(menu[position].iconCategory)
-        holder.storeDescription.text = menu[position].category
-        holder.imgStore.setImageResource(menu[position].logo)
-        holder.serviceTime.text = menu[position].time
-        holder.storeRank.text = menu[position].ranking
+        holder.storeName.text = adList[position].storeName
+        holder.iconCategory.setImageResource(adList[position].iconCategory)
+        holder.storeDescription.text = adList[position].location
+        holder.imgStore.setImageResource(adList[position].logo)
+        holder.serviceTime.text = adList[position].time
+        holder.storeRank.text = adList[position].ranking
 
-        //Vista Negocios Detalles
+        //Vista Ads Detalles
         holder.itemView.setOnClickListener{
-            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("details", menu[position])
+            val intent = Intent(holder.itemView.context, AdsDetailActivity::class.java)
+            intent.putExtra("adDetails", adList[position])
             holder.itemView.context.startActivity(intent)
         }
 
@@ -51,7 +53,7 @@ class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapte
 
     //this fragment code help us to know how many items we can see in the page
     override fun getItemCount(): Int {
-        return menu.size
+        return adList.size
 
     }
 }

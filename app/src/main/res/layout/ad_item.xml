@@ -53,17 +53,17 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center_vertical"
-                    android:text="Tekax Adventures Tours"
+                    android:text="Agences from Adventures Tours"
                     android:textColor="@color/black"
                     android:textSize="11sp" />
 
                 <ImageView
                     android:id="@+id/iconStatus"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_discount" />
+                    android:src="@drawable/ic_fly_agence" />
             </LinearLayout>
 
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="center_vertical"
-                android:text="Tekax de Álvaro Obregón"
+                android:text="Mérida, Yucatán, México"
                 android:textColor="@color/black"
                 android:textSize="9sp" />
 
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="20% OFF For Couples or Familys"
+                    android:text="20% in your first foreing fly"
                     android:textColor="#FF0000"
                     android:textSize="8sp"
                     android:textStyle="bold"
@@ -108,8 +108,8 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="1dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="4.6"
-                    android:textColor="#CB9F00"
+                    android:text="4.6K"
+                    android:textColor="@color/black"
                     android:textSize="10sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -123,7 +123,7 @@
                     android:layout_height="16dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="4dp"
-                    android:src="@drawable/ic_ranking"
+                    android:src="@drawable/ic_views"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

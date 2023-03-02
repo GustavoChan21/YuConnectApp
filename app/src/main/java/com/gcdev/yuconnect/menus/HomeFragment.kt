@@ -6,8 +6,8 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gcdev.yuconnect.R
-import com.gcdev.yuconnect.adapter.ads.AdSetData
-import com.gcdev.yuconnect.adapter.ads.AdsAdapter
+import com.gcdev.yuconnect.adapter.adsCategory.AdSetData
+import com.gcdev.yuconnect.adapter.adsCategory.AdsAdapter
 import com.gcdev.yuconnect.adapter.service.ServiceSetData
 import com.gcdev.yuconnect.adapter.service.ServicesAdapter
 
@@ -26,10 +26,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView2.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
 
         val recyclerView21 = requireView().findViewById<RecyclerView>(R.id.rv_ads2)
-        recyclerView21.adapter = AdsAdapter(AdSetData.setAds())
+        recyclerView21.adapter = AdsAdapter(AdSetData.setAdsRec())
         recyclerView21.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
 
-
     }
+
 
 }

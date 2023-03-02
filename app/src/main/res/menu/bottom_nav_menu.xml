@@ -16,10 +16,10 @@
         android:title="Inicio"
         android:icon="@drawable/ic_menu_home"/>
 
-    <item
-        android:id="@+id/favoritesFragment"
-        android:title="Favoritos"
-        android:icon="@drawable/ic_menu_favorites" />
+<!--    <item-->
+<!--        android:id="@+id/favoritesFragment"-->
+<!--        android:title="Favoritos"-->
+<!--        android:icon="@drawable/ic_menu_favorites" />-->
 
     <item
         android:id="@+id/profileFragment"

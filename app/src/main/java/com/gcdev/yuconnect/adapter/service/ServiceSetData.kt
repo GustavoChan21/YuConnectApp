@@ -28,7 +28,7 @@ object ServiceSetData {
                 3,
                 R.drawable.ic_menu_hospedaje,
                 "Hospedaje",
-                StoreSetData.setResultGas()
+                StoreSetData.setResultHospedaje()
             )
         )
         serviceList.add(
@@ -36,14 +36,14 @@ object ServiceSetData {
                 4,
                 R.drawable.ic_menu_particulares,
                 "Particulares",
-                StoreSetData.setResultAbarrotes()
+                StoreSetData.setResultParticulares()
             )
         )
         serviceList.add(
             ServicesData(5,
                 R.drawable.ic_menu_publicos,
                 "Públicos",
-                StoreSetData.setResultGas()
+                StoreSetData.setResultPublicos()
             )
         )
         serviceList.add(
@@ -51,7 +51,7 @@ object ServiceSetData {
                 6,
                 R.drawable.ic_menu_restaurantes,
                 "Restaurantes",
-                StoreSetData.setResultAbarrotes()
+                StoreSetData.setResultRestaurantes()
             )
         )
         serviceList.add(
@@ -59,7 +59,7 @@ object ServiceSetData {
                 7,
                 R.drawable.ic_menu_salud,
                 "Salud",
-                StoreSetData.setResultGas()
+                StoreSetData.setResultSalud()
             )
         )
         serviceList.add(
@@ -67,7 +67,7 @@ object ServiceSetData {
                 8,
                 R.drawable.ic_menu_turismo,
                 "Turismo",
-                StoreSetData.setResultAbarrotes()
+                StoreSetData.setResultTurismo()
             )
         )
         return serviceList

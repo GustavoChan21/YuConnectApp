@@ -1,18 +1,18 @@
-package com.gcdev.yuconnect.adapter.ads
+package com.gcdev.yuconnect.adapter.adsCategory
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.gcdev.yuconnect.CategoryResultActivity
+import com.gcdev.yuconnect.AdsListResultActivity
 import com.gcdev.yuconnect.R
-import com.gcdev.yuconnect.adapter.service.ServicesAdapter
-import com.gcdev.yuconnect.adapter.service.ServicesData
+import com.gcdev.yuconnect.adapter.adsList.AdsListData
 
-class AdsAdapter (var ads: List<AdsData>) : RecyclerView.Adapter<AdsAdapter.ViewHolder>() {
+class AdsAdapter(var ads: List<AdsData>) : RecyclerView.Adapter<AdsAdapter.ViewHolder>() {
     //this is to do dinamic the recyclerview about first page like results of category, planets or other list about some category topic
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -35,8 +35,8 @@ class AdsAdapter (var ads: List<AdsData>) : RecyclerView.Adapter<AdsAdapter.View
 
     //here we serialice our list of items
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.imgAds.setImageResource(ads[position].logoAdd)
-        holder.addName.text = ads[position].tituloAdd
+        holder.imgAds.setImageResource(ads[position].logoAd)
+        holder.addName.text = ads[position].tituloAd
         holder.addStatusImg.setImageResource(ads[position].iconStatus)
         holder.addLocation.text = ads[position].location
         holder.addDiscountDescription.text = ads[position].discountDescription
@@ -45,6 +45,12 @@ class AdsAdapter (var ads: List<AdsData>) : RecyclerView.Adapter<AdsAdapter.View
 
 
         //Vista Menu Detalles
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context, AdsListResultActivity::class.java)
+            intent.putExtra("adsListResult", ads[position])
+            Log.e("Position", position.toString())
+            holder.itemView.context.startActivity(intent)
+        }
 
 
     }

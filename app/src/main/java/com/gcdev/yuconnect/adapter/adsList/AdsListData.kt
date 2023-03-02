@@ -1,13 +1,14 @@
-package com.gcdev.yuconnect.adapter.store
+package com.gcdev.yuconnect.adapter.adsList
 
+import com.gcdev.yuconnect.adapter.store.StoreData
 import java.io.Serializable
 
-data class StoreData(
+data class AdsListData (
     var id:Int,
     var iconCategory:Int,
     var titulo:String,
     var storeName:String,
-    var category:String,
+    var location:String,
     var time:String,
     var price:String,
     var ranking: String,
@@ -16,5 +17,4 @@ data class StoreData(
     var imgBackground: Int,
     var description:String,
     var workDays:String
-
-): Serializable
+    ): Serializable
