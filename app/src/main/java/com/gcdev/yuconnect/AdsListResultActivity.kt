@@ -2,6 +2,7 @@ package com.gcdev.yuconnect
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gcdev.yuconnect.adapter.adsCategory.AdsData
@@ -17,13 +18,24 @@ class AdsListResultActivity : AppCompatActivity() {
         binding = ActivityAdsListResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val menu: AdsData = intent.getSerializableExtra("adsListResult") as AdsData
+        val menu3: AdsData = intent.getSerializableExtra("adsListResult") as AdsData
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerAdsResults)
-        recyclerView.adapter = AdsListAdapter(menu.itemAds)
+        //recyclerView.adapter = AdsListAdapter(menu3.itemAds)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        binding.categoryTitleBar.setText(menu.tituloAd)
+        val returnHome = supportActionBar
+        returnHome?.title = menu3.tituloAd
+        returnHome?.setDisplayHomeAsUpEnabled(true)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            android.R.id.home ->{
+                finish()
+                true
+            }
+            else ->super.onOptionsItemSelected(item)
+        }
     }
 }

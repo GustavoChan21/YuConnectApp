@@ -1,5 +1,6 @@
 package com.gcdev.yuconnect
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
@@ -12,6 +13,14 @@ class IntroScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro_screen)
 
+        val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
+        if (isLoggedIn) {
+            // El usuario ya ha iniciado sesión anteriormente, omitir la actividad de inicio de sesión
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
         val btnLogin: AppCompatButton = findViewById(R.id.btnLogIn)
         btnLogin.setOnClickListener{
             val intent = Intent(this, AuthActivity::class.java)
@@ -20,7 +29,7 @@ class IntroScreenActivity : AppCompatActivity() {
 
         val btnGuestAcces: AppCompatButton = findViewById(R.id.btnGuestAccess)
         btnGuestAcces.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, OnBoardingActivity::class.java)
             startActivity(intent)
         }
 

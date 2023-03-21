@@ -16,5 +16,6 @@ data class AdsListData (
 
     var imgBackground: Int,
     var description:String,
-    var workDays:String
+    var workDays:String,
+    var uriMapsStr:String
     ): Serializable

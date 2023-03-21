@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.gcdev.yuconnect.CategoryResultActivity
 import com.gcdev.yuconnect.R
 
@@ -30,12 +31,17 @@ class ServicesAdapter(var categorias: List<ServicesData>) : RecyclerView.Adapter
     //here we serialice our list of items
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.serviceName.text = categorias[position].categoryService
-        holder.imgService.setImageResource(categorias[position].iconService)
+        //holder.imgService.setImageResource(categorias[position].iconService)
+        Glide
+            .with(holder.imgService.context!!)
+            .load(categorias[position].iconService)
+            .placeholder(R.drawable.logo)
+            .into(holder.imgService!!);
 
         //Vista Menu Detalles
         holder.itemView.setOnClickListener{
             val intent = Intent(holder.itemView.context, CategoryResultActivity::class.java)
-            intent.putExtra("abarrotes", categorias[position])
+            intent.putExtra("id_services", categorias[position].id)
             Log.e("Position", position.toString())
             holder.itemView.context.startActivity(intent)
         }

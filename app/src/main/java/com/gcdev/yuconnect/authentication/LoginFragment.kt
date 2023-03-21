@@ -1,7 +1,10 @@
 package com.gcdev.yuconnect.authentication
 
+import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -11,12 +14,16 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gcdev.yuconnect.MainActivity
+import com.gcdev.yuconnect.OnBoardingActivity
 import com.gcdev.yuconnect.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 class LoginFragment : Fragment(R.layout.fragment_login){
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var dbRef: DatabaseReference
+    private lateinit var usuario: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,6 +42,12 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             performLogin()
         }
 
+    }
+
+    private fun onBoardingIsFinished(): Boolean{
+
+        val sharedPreferences = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("finished",false)
     }
 
     private fun performLogin() {
@@ -63,9 +76,13 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, go to the main activity page
-                    val intent = Intent(activity, MainActivity::class.java)
-                    startActivity(intent)
+                    val sharedPreferences = requireActivity().getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("isLoggedIn",true)
+                    editor.apply()
 
+                    val intent = Intent(activity, OnBoardingActivity::class.java)
+                    startActivity(intent)
                     Toast.makeText(context, "Autenticacion Correcta", Toast.LENGTH_SHORT).show()
                 } else {
                     // If sign in fails, display a message to the user.

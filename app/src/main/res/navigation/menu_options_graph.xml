@@ -11,8 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_testActivity"
-            app:destination="@id/testActivity" />
+            android:id="@+id/action_homeFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
     </fragment>
     <fragment
         android:id="@+id/comunityFragment"
@@ -30,20 +30,10 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/promotionsFragment"
-        android:name="com.gcdev.yuconnect.menus.PromotionsFragment"
-        android:label="fragment_promotions"
-        tools:layout="@layout/fragment_promotions" />
-    <fragment
         android:id="@+id/collaboratorFragment"
         android:name="com.gcdev.yuconnect.menus.CollaboratorFragment"
         android:label="fragment_collaborator"
         tools:layout="@layout/fragment_collaborator" />
-    <activity
-        android:id="@+id/testActivity"
-        android:name="com.gcdev.yuconnect.TestActivity"
-        android:label="activity_test"
-        tools:layout="@layout/activity_test" />
     <activity
         android:id="@+id/categoryResultActivity"
         android:name="com.gcdev.yuconnect.CategoryResultActivity"
@@ -59,4 +49,9 @@
         android:name="com.gcdev.yuconnect.DetailActivity"
         android:label="activity_detail"
         tools:layout="@layout/activity_detail" />
+    <activity
+        android:id="@+id/searchViewActivity"
+        android:name="com.gcdev.yuconnect.adapter.searchview.SearchViewActivity"
+        android:label="activity_search_view"
+        tools:layout="@layout/activity_search_view" />
 </navigation>

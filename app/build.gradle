@@ -50,6 +50,7 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -63,5 +64,18 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.7.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
     implementation 'com.squareup.okhttp3:okhttp:4.3.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //page indicator
+    implementation("com.tbuonomo:dotsindicator:4.3")
+
+    //DEPENDENCIA LOTTIE
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
 
 }

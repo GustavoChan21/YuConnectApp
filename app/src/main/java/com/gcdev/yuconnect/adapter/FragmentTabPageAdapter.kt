@@ -6,23 +6,20 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.gcdev.yuconnect.CollaboratorInfoFragment
 import com.gcdev.yuconnect.UserInfoFragment
-import com.gcdev.yuconnect.menus.PromotionsFragment
 
 class FragmentTabPageAdapter(
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(fragmentManager, lifecycle){
     override fun getItemCount(): Int {
-        return 6
+        return 2
     }
 
     override fun createFragment(position: Int): Fragment {
         return if (position == 0)
             UserInfoFragment()
-        else if (position == 1)
-            UserInfoFragment()
         else
-            UserInfoFragment()
+            CollaboratorInfoFragment()
     }
 
 }

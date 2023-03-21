@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.gcdev.yuconnect.DetailActivity
 import com.gcdev.yuconnect.R
 
@@ -34,16 +35,28 @@ class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.storeName.text = menu[position].storeName
-        holder.iconCategory.setImageResource(menu[position].iconCategory)
-        holder.storeDescription.text = menu[position].category
-        holder.imgStore.setImageResource(menu[position].logo)
+        //holder.iconCategory.setImageResource(menu[position].iconCategory)
+        Glide
+            .with(holder.iconCategory)
+            .load(menu[position].iconCategory)
+            .placeholder(R.drawable.logo)
+            .into(holder.iconCategory!!);
+
+        holder.storeDescription.text = menu[position].description
+        //holder.imgStore.setImageResource(menu[position].logo)
+        Glide
+            .with(holder.imgStore)
+            .load(menu[position].imgBackground)
+            .placeholder(R.drawable.logo)
+            .into(holder.imgStore!!);
+
         holder.serviceTime.text = menu[position].time
         holder.storeRank.text = menu[position].ranking
 
         //Vista Negocios Detalles
         holder.itemView.setOnClickListener{
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("details", menu[position])
+            intent.putExtra("details", menu[position].categoryId)
             holder.itemView.context.startActivity(intent)
         }
 

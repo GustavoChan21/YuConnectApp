@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.gcdev.yuconnect.AdsDetailActivity
 import com.gcdev.yuconnect.DetailActivity
 import com.gcdev.yuconnect.R
@@ -36,9 +37,23 @@ class AdsListAdapter(var adList: List<AdsListData>) : RecyclerView.Adapter<AdsLi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.storeName.text = adList[position].storeName
-        holder.iconCategory.setImageResource(adList[position].iconCategory)
+
+        //holder.iconCategory.setImageResource(adList[position].iconCategory)
+        Glide
+            .with(holder.iconCategory.context!!)
+            .load(adList[position].iconCategory)
+            .placeholder(R.drawable.logo)
+            .into(holder.iconCategory!!);
+
         holder.storeDescription.text = adList[position].location
-        holder.imgStore.setImageResource(adList[position].logo)
+
+        //holder.imgStore.setImageResource(adList[position].logo)
+        Glide
+            .with(holder.imgStore.context!!)
+            .load(adList[position].logo)
+            .placeholder(R.drawable.logo)
+            .into(holder.imgStore!!);
+
         holder.serviceTime.text = adList[position].time
         holder.storeRank.text = adList[position].ranking
 

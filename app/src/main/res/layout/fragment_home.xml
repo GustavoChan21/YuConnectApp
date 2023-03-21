@@ -61,7 +61,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/avatar"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="6dp"
@@ -109,7 +109,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Valladolid, Yucatán"
+                android:text="Tekax, Yucatán"
                 android:textColor="@color/black"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -142,10 +142,11 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="14dp"
             android:layout_marginBottom="6dp"
-            app:layout_constraintBottom_toTopOf="@+id/ads_container"
+            app:layout_constraintBottom_toTopOf="@+id/ads_container2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/locationContainer">
+            app:layout_constraintTop_toBottomOf="@+id/locationContainer"
+            tools:ignore="UnknownId">
 
             <TextView
                 android:id="@+id/textView3"
@@ -175,75 +176,89 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!--   Container of Recomendations about Services or Trending Topics    -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ads_container"
+        <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="14dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="64dp"
-            android:overScrollMode="never"
-            android:scrollbars="vertical"
-            android:background="@drawable/bg_green_light_rounded"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:layout_marginBottom="62dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/services_container">
 
-            <TextView
-                android:id="@+id/addCategory1"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ads_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Promociones"
-                android:textColor="@color/black"
-                android:textSize="14sp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_green_light_rounded"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/services_container">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_ads"
-                android:layout_width="match_parent"
-                android:layout_height="176dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addCategory1"
-                tools:ignore="MissingConstraints"
-                tools:listitem="@layout/ad_item" />
+                <TextView
+                    android:id="@+id/addCategory1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Promociones"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/addCategory2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Recomendaciones"
-                android:textColor="@color/black"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="2dp"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_ads" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ads"
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addCategory1"
+                    tools:ignore="MissingConstraints"
+                    tools:listitem="@layout/ad_item" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_ads2"
-                android:layout_width="match_parent"
-                android:layout_height="176dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addCategory2"
-                tools:ignore="MissingConstraints"
-                tools:listitem="@layout/ad_item"/>
+                <TextView
+                    android:id="@+id/addCategory2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Recomendaciones"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/rv_ads2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_ads" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ads2"
+                    android:layout_width="match_parent"
+                    android:layout_height="226dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addCategory2"
+                    tools:ignore="MissingConstraints"
+                    tools:listitem="@layout/ad_item" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

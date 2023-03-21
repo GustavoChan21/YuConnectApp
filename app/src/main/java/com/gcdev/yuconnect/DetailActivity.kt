@@ -1,31 +1,56 @@
 package com.gcdev.yuconnect
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.CheckBox
-import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.gcdev.yuconnect.adapter.service.ServicesAdapter
+import com.gcdev.yuconnect.adapter.service.ServicesData
 import com.gcdev.yuconnect.adapter.store.StoreData
 import com.gcdev.yuconnect.databinding.ActivityDetailBinding
+import com.gcdev.yuconnect.network.ApiServicesInterface
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
+
+    lateinit var request: ApiServicesInterface
+    var collection: ArrayList<ServicesData>? = null
+    var adapter: ServicesAdapter? = null
+    var recyclerView: RecyclerView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val menu: StoreData = intent.getSerializableExtra("details") as StoreData
+        //RecyclerView Others Services Test
+        request = ApiClient.buildService(ApiServicesInterface::class.java)
 
-        binding.titleStoreDetail.setText(menu.storeName)
-        binding.categoryDetail.setText(menu.category)
-        binding.priceDetail.setText(menu.price)
-        binding.descriptionDetail.setText(menu.description)
-        binding.horarioDetail.setText(menu.workDays)
-        binding.imgLogoDetail.setImageResource(menu.imgBackground)
-        binding.imageBackgroundPgDetail.setImageResource(menu.logo)
+        recyclerView = findViewById<RecyclerView>(R.id.rv_parent)
+        //recyclerView.adapter = ServicesAdapter(ServiceSetData.setService())
+        getCollection()
+        recyclerView!!.layoutManager = GridLayoutManager(this, 1, RecyclerView.HORIZONTAL, false)
+
+        val menu2: StoreData = intent.getSerializableExtra("details") as StoreData
+
+        //binding.titleStoreDetail.setText(menu2.storeName)
+        //binding.categoryDetail.setText(menu2.category)
+        //binding.priceDetail.setText(menu2.price)
+        //binding.descriptionDetail.setText(menu2.description)
+        //binding.horarioDetail.setText(menu2.workDays)
+        //binding.imgLogoDetail.setImageResource(menu2.imgBackground)
+        //binding.imageBackgroundPgDetail.setImageResource(menu2.logo)
 
         //favorite icon actions and toast
         val checkFavorites = findViewById<CheckBox>(R.id.checkFavorites)
@@ -38,21 +63,32 @@ class DetailActivity : AppCompatActivity() {
             }
         }
 
+
+        //go to the maps view "test1"
+        binding.test.setOnClickListener(View.OnClickListener {
+            val intentUri = Uri.parse("geo:20.932697,-89.019152?z=16&q=20.932697,-89.019152(Izamal,+Yucatán,+México)")
+            val intent = Intent(Intent.ACTION_VIEW, intentUri)
+            startActivity(intent)
+        })
+
+        binding.phoneAction.setOnClickListener(View.OnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:1234567890")
+            startActivity(intent)
+        })
+
+
         //back to list of stores per category
         val returnHome = supportActionBar
-        returnHome?.title = menu.storeName
+        returnHome?.title = menu2.storeName
         returnHome?.setDisplayHomeAsUpEnabled(true)
-//        val btnBack: ImageButton = findViewById(R.id.backToList)
-//        btnBack.setOnClickListener{
-//            val intent = Intent(this, CategoryResultActivity::class.java)
-//            startActivity(intent)
-//        }
 
     }
 
     private fun showToast(str: String){
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
@@ -63,5 +99,37 @@ class DetailActivity : AppCompatActivity() {
             else ->super.onOptionsItemSelected(item)
         }
     }
+
+    //Get Data of API OtherServices TestExample
+    private fun getCollection(){
+        collection = ArrayList<ServicesData>()
+        val call = request.getCategorias()
+        call.enqueue(object : Callback<ArrayList<ServicesData>> {
+            override fun onResponse(call: Call<ArrayList<ServicesData>>, response: Response<ArrayList<ServicesData>>) {
+
+                if (response.isSuccessful){
+                    if (response.body()?.size != 0){
+
+                        for (item in response.body()!!) {
+                            collection!!.add(item)
+                        }
+                    } else {
+                        //toast(activity!!, App.ERROR_TABLA_VACIA)
+                    }
+                    adapter = ServicesAdapter(collection!!)
+                    recyclerView?.adapter = adapter
+
+                    Log.d("Comsumir Data", response.body().toString());
+
+                } else {
+                    //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
+                }
+            }
+            override fun onFailure(call: Call<ArrayList<ServicesData>>, t: Throwable) {
+                //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
+            }
+        })
+    }
+
 
 }

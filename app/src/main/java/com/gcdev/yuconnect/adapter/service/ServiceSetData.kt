@@ -6,12 +6,12 @@ import com.gcdev.yuconnect.adapter.store.StoreSetData
 object ServiceSetData {
     fun setService(): List<ServicesData> {
         var serviceList = mutableListOf<ServicesData>()
-        serviceList.add(
+        /*serviceList.add(
             ServicesData(
                 1,
                 R.drawable.ic_menu_abarrotes,
                 "Abarrotes",
-                StoreSetData.setResultAbarrotes()
+                //StoreSetData.setResultAbarrotes()
             )
         )
         serviceList.add(
@@ -70,6 +70,8 @@ object ServiceSetData {
                 StoreSetData.setResultTurismo()
             )
         )
+
+         */
         return serviceList
     }
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.gcdev.yuconnect.AdsListResultActivity
 import com.gcdev.yuconnect.R
 import com.gcdev.yuconnect.adapter.adsList.AdsListData
@@ -22,7 +23,7 @@ class AdsAdapter(var ads: List<AdsData>) : RecyclerView.Adapter<AdsAdapter.ViewH
         var addLocation = view.findViewById<TextView>(R.id.tvLocationAds)
         var addDiscountDescription = view.findViewById<TextView>(R.id.tvDiscount)
         var addRank = view.findViewById<TextView>(R.id.tvRanking_Ads)
-        var typeRanking = view.findViewById<ImageView>(R.id.typeRanking)
+        //var typeRanking = view.findViewById<ImageView>(R.id.typeRanking)
 
     }
 
@@ -35,13 +36,26 @@ class AdsAdapter(var ads: List<AdsData>) : RecyclerView.Adapter<AdsAdapter.ViewH
 
     //here we serialice our list of items
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.imgAds.setImageResource(ads[position].logoAd)
+        //holder.imgAds.setImageResource(ads[position].logoAd)
+        Glide
+            .with(holder.imgAds)
+            .load(ads[position].logoAd)
+            .placeholder(R.drawable.logo)
+            .into(holder.imgAds!!)
+
+
         holder.addName.text = ads[position].tituloAd
-        holder.addStatusImg.setImageResource(ads[position].iconStatus)
+        //holder.addStatusImg.setImageResource(ads[position].iconStatus)
+        Glide
+            .with(holder.addStatusImg)
+            .load(ads[position].iconStatus)
+            .placeholder(R.drawable.logo)
+            .into(holder.addStatusImg!!)
+
         holder.addLocation.text = ads[position].location
         holder.addDiscountDescription.text = ads[position].discountDescription
         holder.addRank.text = ads[position].ranking
-        holder.typeRanking.setImageResource(ads[position].typeRanking)
+        //holder.typeRanking.setImageResource(ads[position].typeRanking)
 
 
         //Vista Menu Detalles
