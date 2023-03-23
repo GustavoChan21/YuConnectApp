@@ -61,7 +61,8 @@ class AdsAdapter(var ads: List<AdsData>) : RecyclerView.Adapter<AdsAdapter.ViewH
         //Vista Menu Detalles
         holder.itemView.setOnClickListener{
             val intent = Intent(holder.itemView.context, AdsListResultActivity::class.java)
-            intent.putExtra("adsListResult", ads[position])
+            intent.putExtra("id_promotions", ads[position].id)
+            intent.putExtra("tituloAd", ads[position].tituloAd)
             Log.e("Position", position.toString())
             holder.itemView.context.startActivity(intent)
         }

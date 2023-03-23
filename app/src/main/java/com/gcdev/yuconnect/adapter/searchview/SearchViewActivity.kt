@@ -26,8 +26,7 @@ class SearchViewActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         adapter = resultAdapter(Helper.setResultSearch())
-        binding.recyclerViewSearch.layoutManager =
-            StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        binding.recyclerViewSearch.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         binding.recyclerViewSearch.adapter = adapter
 
         binding.se.addTextChangedListener(object : TextWatcher {

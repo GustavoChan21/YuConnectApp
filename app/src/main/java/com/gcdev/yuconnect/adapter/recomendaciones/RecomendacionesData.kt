@@ -5,21 +5,23 @@ import java.io.Serializable
 
 data class RecomendacionesData (
     //Main Variables related with the recycler items
-    //var id:Int,
-    @SerializedName("img")
-    var logoAd: String,
+    @SerializedName("id")
+    var id: Int,
 
     @SerializedName("nombre")
     var tituloAd:String,
 
-    @SerializedName("icono")
-    var iconStatus: String,
+    @SerializedName("img")
+    var logoAd: String,
+
+    @SerializedName("descripcion")
+    var discountDescription:String,
 
     @SerializedName("locacion")
     var location:String,
 
-    @SerializedName("descripcion")
-    var discountDescription:String,
+    @SerializedName("icono")
+    var iconStatus: String,
 
     @SerializedName("vistas")
     var ranking: String,

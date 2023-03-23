@@ -32,16 +32,18 @@ class CategoryResultActivity : AppCompatActivity() {
         request = ApiClient.buildService(ApiServicesInterface::class.java)
 
         val menu: Int = intent.getSerializableExtra("id_services") as Int
+        val nombre: String = intent.getSerializableExtra("categoryService") as String
+
 
         recyclerView = findViewById<RecyclerView>(R.id.recyclerResults)
         //recyclerView.adapter = StoreAdapter(menu.itemStores)
         recyclerView!!.layoutManager = LinearLayoutManager(this)
-        getListStores( id_services = menu)
+        getListStores(menu)
 
 
         //back to home or menu services
         val returnHome = supportActionBar
-        returnHome?.title = menu.toString()
+        returnHome?.title = nombre
         returnHome?.setDisplayHomeAsUpEnabled(true)
     }
 
@@ -61,7 +63,7 @@ class CategoryResultActivity : AppCompatActivity() {
         val call = request.getStoreList(id_services)
         call.enqueue(object : Callback<ArrayList<StoreData>> {
             override fun onResponse(call: Call<ArrayList<StoreData>>, response: Response<ArrayList<StoreData>>) {
-
+                Log.e("validar request", call.request().toString())
                 if (response.isSuccessful){
                     if (response.body()?.size != 0){
 

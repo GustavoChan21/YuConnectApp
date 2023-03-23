@@ -9,38 +9,16 @@ object Helper {
         var menuList = ArrayList<resultList>()
         menuList.add(
             resultList(
-                R.drawable.ic_menu_abarrotes,
-                "Tienda Los 3 Reyes",
-
-            )
-        )
-        menuList.add(
-            resultList(
-
-                R.drawable.ic_menu_abarrotes,
-                "Oxxo San Diego",
-
-            )
-        )
-        menuList.add(
-            resultList(
-
-                R.drawable.ic_menu_abarrotes,
-                "Dunosusa Tekax 2"
-            )
-        )
-        menuList.add(
-            resultList(
                 R.drawable.ic_menu_hospedaje,
-                "TecnoHotel Express",
+                "TecnoHotel Express"
 
-            )
+        )
         )
         menuList.add(
             resultList(
 
                 R.drawable.ic_menu_hospedaje,
-                "El Sultán de la Sierra",
+                "El Sultán de la Sierra"
 
 
             )
@@ -49,32 +27,273 @@ object Helper {
             resultList(
 
                 R.drawable.ic_menu_hospedaje,
-                "Posada del Carmen",
+                "Posada del Carmen"
+
             )
         )
         menuList.add(
             resultList(
-                R.drawable.ic_menu_gasolineras,
-                "Gasolinera Megasur"
+                R.drawable.ic_menu_hospedaje,
+                "Hotel Peraza"
 
-                )
+            )
         )
         menuList.add(
             resultList(
 
-                R.drawable.ic_menu_gasolineras,
-                "Gas Tomza",
+                R.drawable.ic_menu_hospedaje,
+                "Posada Maria Elena"
 
+            )
+        )
+        menuList.add(
+            resultList(
 
-                )
+                R.drawable.ic_menu_hospedaje,
+                "Posada Quinta Socorro"
+            )
+        )
+        menuList.add(
+            resultList(
+                R.drawable.ic_menu_restaurantes,
+                "Restaurante El Huinic"
+
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_restaurantes,
+                "Restaurante Muldzinick"
+
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_restaurantes,
+                "Restaurante El Bistró Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_restaurantes,
+                "Restaurante El Buen Sabor"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_restaurantes,
+                "Lonchería La Estrella"
+            )
+        )
+        //aqui comienza lo nuevo
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_restaurantes,
+                "Cocina Económica Delma"
+            )
         )
         menuList.add(
             resultList(
 
                 R.drawable.ic_menu_turismo,
-                "Grutas Chocantes",
+                "Parque ecoturístico Kaalmankal"
             )
         )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_turismo,
+                "Grutas Chocantes"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_turismo,
+                "Grutas Las Sartenjas"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_turismo,
+                "Zona Arqueológica Chacmultún"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_restaurantes,
+                "Lonchería La Estrella"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_turismo,
+                "La Ermita"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_turismo,
+                "Mirador de Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_gasolineras,
+                "Gasolinera Pemex"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_gasolineras,
+                "Gas Tomza"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_gasolineras,
+                "Mega Sur"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_particulares,
+                "Servicio PC Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_particulares,
+                "Servicios Residenciales Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_particulares,
+                "Taller de Motos Angel"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_particulares,
+                "Servicios Automotriz Cervantes"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_particulares,
+                "Carpintería Katolox"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_abarrotes,
+                "Oxxo"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_abarrotes,
+                "Dale Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_abarrotes,
+                "Boutique Patty Basto"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_abarrotes,
+                "Abarrotes El Jarocho"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_abarrotes,
+                "Tienda de Bazar Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_abarrotes,
+                "Bodega Aurrerá Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_salud,
+                "Hospital General de Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_salud,
+                "UMF #55 IMSS Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_restaurantes,
+                "Consultorio DR. Robrigo Duarte"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_publicos,
+                "H. Ayuntamiento de Tekax"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_publicos,
+                "Autobuses Mayab"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_publicos,
+                "Banco Azteca"
+            )
+        )
+        menuList.add(
+            resultList(
+
+                R.drawable.ic_menu_publicos,
+                "BanCoppel"
+            )
+        )
+
         return menuList
     }
 }

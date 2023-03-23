@@ -72,6 +72,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 for (i in snapshot.children){
                     var username = i.child("userName").getValue()
                     sb.append("$username")
+
+                    if (username == null){
+                        sb.append("Acceso Invitado")
+                        usuario.setText(sb)
+                    }
                 }
                 usuario.setText(sb)
             }
@@ -138,7 +143,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     //get categories of promotions
     private fun getAgences(){
         collectionAgence = ArrayList<AdsData>()
-        val call = request.getAgencias()
+        val call = request.getPromotions()
         call.enqueue(object : Callback<ArrayList<AdsData>> {
             override fun onResponse(call: Call<ArrayList<AdsData>>, response: Response<ArrayList<AdsData>>) {
 
@@ -169,7 +174,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     //get categories of recommendations
     private fun getRecomendaciones(){
         collectionRec = ArrayList<RecomendacionesData>()
-        val call = request.getRecomendacionesCat()
+        val call = request.getRecommendations()
         call.enqueue(object : Callback<ArrayList<RecomendacionesData>> {
             override fun onResponse(call: Call<ArrayList<RecomendacionesData>>, response: Response<ArrayList<RecomendacionesData>>) {
 

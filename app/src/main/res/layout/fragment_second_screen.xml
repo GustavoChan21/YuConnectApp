@@ -7,10 +7,48 @@
     android:layout_height="match_parent"
     tools:context=".onboardingscreens.SecondScreenFragment">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/forma"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/LottieAnimation3"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/compras" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/LottieAnimation2"
+        android:layout_width="190dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/delivery" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/LottieAnimation"
-        android:layout_width="189dp"
-        android:layout_height="135dp"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,6 +58,7 @@
         app:layout_constraintVertical_bias="0.239"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+        android:scaleType="fitXY"
         app:lottie_rawRes="@raw/gps_navigation" />
 
     <TextView
@@ -27,38 +66,45 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
-        android:text="Busca todo lo que necesitas"
+        android:text="Busca Todo lo que Necesites"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LottieAnimation" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="start"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="1dp"
+        android:text="Encuentra todo lo necesario para satisfacer tus necesidades cotidianas, buscando en los establecimientos disponibles de tu comunidad desde YuConnect!, la plataforma 100% Yucateca, para Yucatecos"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/tvNext2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="Next"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Siguiente"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

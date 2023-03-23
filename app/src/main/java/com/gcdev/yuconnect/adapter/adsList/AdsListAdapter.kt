@@ -50,7 +50,7 @@ class AdsListAdapter(var adList: List<AdsListData>) : RecyclerView.Adapter<AdsLi
         //holder.imgStore.setImageResource(adList[position].logo)
         Glide
             .with(holder.imgStore.context!!)
-            .load(adList[position].logo)
+            .load(adList[position].imgBackground)
             .placeholder(R.drawable.logo)
             .into(holder.imgStore!!);
 

@@ -4,8 +4,8 @@ import com.gcdev.yuconnect.R
 import com.gcdev.yuconnect.adapter.adsList.AdsListData
 
 object AdsListSetData {
-    fun setResultAdsPromociones(): List<AdsListData> {
-        var adList = mutableListOf<AdsListData>()
+    fun setResultAdsPromociones() {
+        /*var adList = mutableListOf<AdsListData>()
         adList.add(
             AdsListData(
                 1,
@@ -223,6 +223,8 @@ object AdsListSetData {
 
 
         return adList
+
+         */
     }
 
 }

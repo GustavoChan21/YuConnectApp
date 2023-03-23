@@ -7,7 +7,9 @@ import java.io.Serializable
 
 data class AdsData (
     //Main Variables related with the recycler items
-    //var id:Int,
+    @SerializedName("id")
+    var id: Int,
+
     @SerializedName("img")
     var logoAd: String,
 

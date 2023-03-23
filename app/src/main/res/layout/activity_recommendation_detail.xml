@@ -8,158 +8,156 @@
     android:orientation="vertical"
     android:background="@color/white">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="6dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="6dp">
 
             <ImageView
                 android:id="@+id/recImgBackground"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:layout_marginVertical="6dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="6dp"
+                android:layout_marginTop="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/foto_f8"
+                android:scaleType="fitXY"
+                android:src="@drawable/chichen"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
 
-            <CheckBox
-                android:id="@+id/recCheckFavorites"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/bg_green_light_rounded"
-                android:button="@drawable/selector_favorite_list"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:useMaterialThemeColors="false" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_marginTop="0dp"
-            android:background="#ffffff"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-30dp"
-            android:orientation="vertical">
-
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/imgRecDetail"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginBottom="16dp"
-                android:src="@drawable/grutas_chocantes_logo"
-                android:elevation="40dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
-                app:civ_border_color="@color/lightGray"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="40dp"
+                android:src="@drawable/chichen_logo"
+                app:civ_border_color="#F0F0F0"
                 app:civ_border_width="1.4dp"
                 app:civ_shadow="true"
                 app:civ_shadow_color="@color/black"
                 app:civ_shadow_radius="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.025"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.96" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-72dp"
-                android:backgroundTint="#dae2df"
+                android:backgroundTint="#F0F0F0"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="10dp"
-                >
+                app:cardElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:paddingTop="60dp">
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:id="@+id/title_rec_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="TEKAX ADVENTURES"
+                        android:text="Grutas Chocantes"
+                        android:layout_marginTop="4dp"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="16.4sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"/>
+
 
                     <TextView
                         android:id="@+id/location_rec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-6dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Tekax de Álvaro Obregón, Yucatán"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Tirolesa y Recorridos Extremos"
                         android:textColor="@color/black"
-                        android:textSize="14sp"/>
+                        android:textSize="12sp" />
 
                     <View
-                        android:layout_width="160dp"
-                        android:layout_height="2dp"
+                        android:layout_width="260dp"
+                        android:layout_height="3dp"
                         android:layout_marginTop="4dp"
-                        android:background="#00695C"/>
+                        android:background="#2EAEC5" />
 
                     <LinearLayout
-                        android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="18dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
-
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_bold"
-                            android:text="Desde: "
-                            android:textColor="@color/black"
-                            android:textSize="14sp"/>
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_price"/>
-
-                        <TextView
-                            android:id="@+id/price_rec_detail"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="2dp"
                             android:fontFamily="@font/poppins_bold"
-                            android:text="100.00"
+                            android:text="Precio: "
+                            android:layout_marginEnd="4dp"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
 
+
+                        <TextView
+                            android:id="@+id/price_rec_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="2dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="Desde $100.00 en adelante"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
 
 
         </LinearLayout>
@@ -169,22 +167,24 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:backgroundTint="#dae2df"
+                android:backgroundTint="#F0F0F0"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
+
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
-                    android:background="#dae2df"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginVertical="6dp"
                     android:layout_weight="1"
-                    android:padding="14dp"
-                    >
+                    android:background="#F0F0F0"
+                    android:padding="4dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -194,14 +194,14 @@
                             android:id="@+id/rec_description_detail"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-
                             android:fontFamily="@font/poppins"
-                            android:textAlignment="gravity"
                             android:letterSpacing="0.1"
                             android:lineSpacingExtra="1dp"
-                            android:text="descripcion"
+                            android:text="Grutas Chocantes es naturaleza, aventura y diversión. Atrévete a conocerlo y disfrutar una experiencia única en el estado de Yucatán."
+                            android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="13sp"/>
+                            android:textSize="11.4sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </ScrollView>
@@ -214,22 +214,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:backgroundTint="#dae2df"
+                android:backgroundTint="#F0F0F0"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
+
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
-                    android:background="#dae2df"
                     android:layout_marginVertical="6dp"
                     android:layout_weight="1"
+                    android:background="#F0F0F0"
                     android:padding="4dp"
                     tools:ignore="NestedScrolling">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -239,14 +242,14 @@
                             android:id="@+id/rec_street_detail"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-
                             android:fontFamily="@font/poppins"
-                            android:textAlignment="gravity"
                             android:letterSpacing="0.1"
                             android:lineSpacingExtra="1dp"
                             android:text="calle 23 x 34 y 44, San Francisco 97970"
+                            android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="12sp"/>
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/rec_location_detail"
@@ -254,138 +257,236 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/poppins"
-                            android:textAlignment="gravity"
                             android:letterSpacing="0.1"
                             android:lineSpacingExtra="1dp"
                             android:text="Tekax de Álvaro Obregón, Yucatán, México"
+                            android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="12sp"/>
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </ScrollView>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-        <LinearLayout
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+                android:id="@+id/phoneAction"
+                android:layout_width="144dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:backgroundTint="#dae2df"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-                <ScrollView
+                android:backgroundTint="#F0F0F0"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
-                    android:background="#dae2df"
-                    android:layout_marginVertical="6dp"
-                    android:layout_weight="1"
-                    android:padding="4dp"
-                    tools:ignore="NestedScrolling">
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="6dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgPhone"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/ic_phone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/labelPhone"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textAlignment="textStart"
+                        android:text="Telefono: "
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/rec_contact_detail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imgPhone"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:text="Telefono: "
-                            android:textSize="12sp"
-                            android:gravity="center_vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/rec_contact_detail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="8dp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:letterSpacing="0.1"
+                        android:lineSpacingExtra="1dp"
+                        android:text="997 844 88 42"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelPhone" />
 
-                        <TextView
-                            android:id="@+id/rec_contact_detail"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/poppins"
-                            android:letterSpacing="0.1"
-                            android:layout_marginHorizontal="8dp"
-                            android:lineSpacingExtra="1dp"
-                            android:text="997 844 88 42"
-                            android:textAlignment="gravity"
-                            android:gravity="center_vertical"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/textView4"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </ScrollView>
             </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:backgroundTint="#F0F0F0"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="6dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/ic_time_greenbg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Horario: "
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/rec_hour_detail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView5"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rec_hour_detail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:letterSpacing="0.1"
+                        android:lineSpacingExtra="1dp"
+                        android:text="9:00am a 12:00pm"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_marginTop="2dp"
-                android:layout_height="32dp"
-                android:paddingVertical="4dp"
-                android:textAlignment="center"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_semibold"
-                android:layout_marginHorizontal="16dp"
-                android:text="Horario"
-                android:textAllCaps="true"
-                android:textStyle="bold"
-                android:letterSpacing="0.1"
-                android:textColor="@color/black"/>
-            <View
-                android:layout_width="120dp"
-                android:layout_gravity="center"
-                android:layout_height="3dp"
-                android:layout_marginTop="-10dp"
-                android:background="#00695C"/>
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="13dp"
-                android:backgroundTint="#dae2df"
+                android:backgroundTint="#F0F0F0"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
+
                 <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
                     android:layout_weight="1"
-                    android:background="#dae2df"
-                    android:padding="12dp">
+                    android:background="#F0F0F0"
+                    android:padding="6dp">
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="140dp"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/calendar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Abierto: "
+                            android:textAlignment="gravity"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageView4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
 
                         <TextView
                             android:id="@+id/rec_horario_detail"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:fontFamily="@font/poppins"
                             android:letterSpacing="0.1"
                             android:lineSpacingExtra="1dp"
-                            android:text="Esta es información de prueba"
+                            android:text="Todos los dias"
                             android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="13sp" />
-                    </LinearLayout>
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textView5"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </ScrollView>
             </androidx.cardview.widget.CardView>
@@ -394,25 +495,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="3dp"
-                android:backgroundTint="#dae2df"
+                android:layout_marginVertical="6dp"
+                android:backgroundTint="#F0F0F0"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
+
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_weight="1"
-                    android:background="#dae2df"
-                    android:padding="12dp">
+                    android:background="#F0F0F0"
+                    android:padding="1dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <ImageButton
-                            android:id="@+id/btn_maps_rec"
+                        <ImageView
+                            android:id="@+id/btn_maps"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="2dp"
@@ -424,21 +526,21 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/test_rec"
+                            android:id="@+id/test"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:fontFamily="@font/poppins"
+                            android:clickable="true"
+                            android:fontFamily="@font/poppins_semibold"
                             android:letterSpacing="0.1"
                             android:lineSpacingExtra="1dp"
-                            android:clickable="true"
                             android:text="Ver ubicación en Google Maps"
                             android:textAlignment="gravity"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/btn_maps_rec"
+                            app:layout_constraintStart_toEndOf="@+id/btn_maps"
                             app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -447,6 +549,7 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

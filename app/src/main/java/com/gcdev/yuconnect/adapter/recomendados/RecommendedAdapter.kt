@@ -1,4 +1,4 @@
-package com.gcdev.yuconnect.adapter.store
+package com.gcdev.yuconnect.adapter.recomendados
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,10 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.gcdev.yuconnect.DetailActivity
+import com.gcdev.yuconnect.AdsDetailActivity
 import com.gcdev.yuconnect.R
+import com.gcdev.yuconnect.RecommendationDetailActivity
+import com.gcdev.yuconnect.adapter.adsList.AdsListData
 
-class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapter.ViewHolder>() {
+class RecommendedAdapter (var adList: List<RecommendedData>) : RecyclerView.Adapter<RecommendedAdapter.ViewHolder>() {
     //this is to do dinamic the recyclerview about first page like results of category, planets or other list about some category topic
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -19,7 +21,7 @@ class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapte
         var iconCategory = view.findViewById<ImageView>(R.id.iconCategory)
         var storeName = view.findViewById<TextView>(R.id.tvTitleStore)
         var storeDescription = view.findViewById<TextView>(R.id.tvSubtitleStore)
-        var location = view.findViewById<TextView>(R.id.tvTime_Service)
+        var serviceTime = view.findViewById<TextView>(R.id.tvTime_Service)
         var storeRank = view.findViewById<TextView>(R.id.tvRanking_Service)
 
     }
@@ -34,29 +36,31 @@ class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapte
     //here we serialice our list of items
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.storeName.text = menu[position].storeName
-        //holder.iconCategory.setImageResource(menu[position].iconCategory)
+        holder.storeName.text = adList[position].storeName
+
+        //holder.iconCategory.setImageResource(adList[position].iconCategory)
         Glide
-            .with(holder.iconCategory)
-            .load(menu[position].iconCategory)
+            .with(holder.iconCategory.context!!)
+            .load(adList[position].iconCategory)
             .placeholder(R.drawable.logo)
             .into(holder.iconCategory!!);
 
-        holder.storeDescription.text = menu[position].category
-        //holder.imgStore.setImageResource(menu[position].logo)
+        holder.storeDescription.text = adList[position].location
+
+        //holder.imgStore.setImageResource(adList[position].logo)
         Glide
-            .with(holder.imgStore)
-            .load(menu[position].logo)
+            .with(holder.imgStore.context!!)
+            .load(adList[position].logo)
             .placeholder(R.drawable.logo)
             .into(holder.imgStore!!);
 
-        holder.location.text = menu[position].location
-        holder.storeRank.text = menu[position].ranking
+        holder.serviceTime.text = adList[position].time
+        holder.storeRank.text = adList[position].ranking
 
-        //Vista Negocios Detalles
+        //Vista Ads Detalles
         holder.itemView.setOnClickListener{
-            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("details", menu[position])
+            val intent = Intent(holder.itemView.context, RecommendationDetailActivity::class.java)
+            intent.putExtra("adDetails", adList[position])
             holder.itemView.context.startActivity(intent)
         }
 
@@ -64,7 +68,7 @@ class StoreAdapter(var menu: List<StoreData>) : RecyclerView.Adapter<StoreAdapte
 
     //this fragment code help us to know how many items we can see in the page
     override fun getItemCount(): Int {
-        return menu.size
+        return adList.size
 
     }
 }

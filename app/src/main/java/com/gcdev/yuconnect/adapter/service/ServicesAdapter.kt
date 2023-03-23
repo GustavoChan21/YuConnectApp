@@ -42,6 +42,7 @@ class ServicesAdapter(var categorias: List<ServicesData>) : RecyclerView.Adapter
         holder.itemView.setOnClickListener{
             val intent = Intent(holder.itemView.context, CategoryResultActivity::class.java)
             intent.putExtra("id_services", categorias[position].id)
+            intent.putExtra("categoryService", categorias[position].categoryService)
             Log.e("Position", position.toString())
             holder.itemView.context.startActivity(intent)
         }

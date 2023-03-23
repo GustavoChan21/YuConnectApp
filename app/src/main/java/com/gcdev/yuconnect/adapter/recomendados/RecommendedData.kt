@@ -1,10 +1,11 @@
-package com.gcdev.yuconnect.adapter.store
+package com.gcdev.yuconnect.adapter.recomendados
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class StoreData(
-    //var id:Int,
+data class RecommendedData (
+    @SerializedName("id")
+    var id: Int,
 
     @SerializedName("categoria_id")
     var categoryId: Int,
@@ -50,5 +51,4 @@ data class StoreData(
 
     @SerializedName("dias_laborales")
     var workDays:String
-
 ): Serializable

@@ -63,7 +63,8 @@ class RecomendacionesAdapter(var rec: List<RecomendacionesData>) : RecyclerView.
         //Vista Menu Detalles
         holder.itemView.setOnClickListener{
             val intent = Intent(holder.itemView.context, RecommendationsActivity::class.java)
-            intent.putExtra("recomendaciones", rec[position])
+            intent.putExtra("id_recomendations", rec[position].id)
+            intent.putExtra("tituloRec", rec[position].tituloAd)
             Log.e("Position", position.toString())
             holder.itemView.context.startActivity(intent)
         }

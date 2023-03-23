@@ -1,21 +1,55 @@
 package com.gcdev.yuconnect.adapter.adsList
 
 import com.gcdev.yuconnect.adapter.store.StoreData
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class AdsListData (
-    var id:Int,
-    var iconCategory:Int,
-    var titulo:String,
-    var storeName:String,
-    var location:String,
-    var time:String,
-    var price:String,
-    var ranking: String,
-    var logo: Int,
+    @SerializedName("id")
+    var id: Int,
 
-    var imgBackground: Int,
+    @SerializedName("categoria_id")
+    var categoryId: Int,
+
+    @SerializedName("icono_categoria")
+    var iconCategory:String,
+
+    @SerializedName("nombre")
+    var storeName:String,
+
+    @SerializedName("categoria")
+    var category:String,
+
+    @SerializedName("precio")
+    var price:String,
+
+    @SerializedName("horario")
+    var time:String,
+
+    @SerializedName("ranking")
+    var ranking: String,
+
+    @SerializedName("img_logo")
+    var logo: String,
+
+    @SerializedName("img_banner")
+    var imgBackground: String,
+
+    @SerializedName("localidad")
+    var location: String,
+
+    @SerializedName("contacto")
+    var contact: String,
+
+    @SerializedName("direccion")
+    var directionStreet: String,
+
+    @SerializedName("descripcion")
     var description:String,
-    var workDays:String,
-    var uriMapsStr:String
+
+    @SerializedName("maps")
+    var maps:String,
+
+    @SerializedName("dias_laborales")
+    var workDays:String
     ): Serializable
