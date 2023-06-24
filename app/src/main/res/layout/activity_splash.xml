@@ -11,11 +11,11 @@
 
     <com.gcdev.yuconnect.view.GifImageView
         android:id="@+id/gifImageView"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

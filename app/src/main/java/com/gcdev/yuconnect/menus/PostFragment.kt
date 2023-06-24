@@ -1,43 +1,38 @@
 package com.gcdev.yuconnect.menus
 
-import android.content.ContentValues.TAG
-import android.content.Context
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
+import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gcdev.yuconnect.R
-import com.gcdev.yuconnect.adapter.adsCategory.AdSetData
 import com.gcdev.yuconnect.adapter.adsCategory.AdsAdapter
 import com.gcdev.yuconnect.adapter.adsCategory.AdsData
 import com.gcdev.yuconnect.adapter.recomendaciones.RecomendacionesAdapter
 import com.gcdev.yuconnect.adapter.recomendaciones.RecomendacionesData
-import com.gcdev.yuconnect.adapter.searchview.Helper
-import com.gcdev.yuconnect.adapter.searchview.resultAdapter
-import com.gcdev.yuconnect.adapter.service.ServiceSetData
 import com.gcdev.yuconnect.adapter.service.ServicesAdapter
 import com.gcdev.yuconnect.adapter.service.ServicesData
-import com.gcdev.yuconnect.adapter.store.StoreAdapter
-import com.gcdev.yuconnect.adapter.store.StoreData
 import com.gcdev.yuconnect.network.ApiServicesInterface
-import com.google.android.gms.tasks.Tasks.call
-import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.Calendar
 
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+/**
+ * A simple [Fragment] subclass.
+ * Use the [PostFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class PostFragment : Fragment(R.layout.fragment_post) {
 
     lateinit var request: ApiServicesInterface
     var collection: ArrayList<ServicesData>? = null
@@ -90,18 +85,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView = requireView().findViewById<RecyclerView>(R.id.rv_parent)
         //recyclerView.adapter = ServicesAdapter(ServiceSetData.setService())
         getCollection()
-        recyclerView!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
-
-        recyclerViewAgence = requireView().findViewById<RecyclerView>(R.id.rv_ads)
-        //recyclerViewAgence!!.adapter = AdsAdapter(AdSetData.setAds())
-        getAgences()
-        recyclerViewAgence!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
-
-
-        recyclerViewRec = requireView().findViewById<RecyclerView>(R.id.rv_ads2)
-        //recyclerViewRec!!.adapter = resultAdapter(Helper.setResultSearch())
-        getRecomendaciones()
-        recyclerViewRec!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
+        recyclerView!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
 
 
     }
@@ -136,68 +120,5 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         })
     }
-
-    //get categories of promotions
-    private fun getAgences(){
-        collectionAgence = ArrayList<AdsData>()
-        val call = request.getPromotions()
-        call.enqueue(object : Callback<ArrayList<AdsData>> {
-            override fun onResponse(call: Call<ArrayList<AdsData>>, response: Response<ArrayList<AdsData>>) {
-
-                if (response.isSuccessful){
-                    if (response.body()?.size != 0){
-
-                        for (item in response.body()!!) {
-                            collectionAgence!!.add(item)
-                        }
-                    } else {
-                        //toast(activity!!, App.ERROR_TABLA_VACIA)
-                    }
-                    adapterAgence = AdsAdapter(collectionAgence!!)
-                    recyclerViewAgence?.adapter = adapterAgence
-
-                    Log.d("Comsumir Data", response.body().toString());
-
-                } else {
-                    //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
-                }
-            }
-            override fun onFailure(call: Call<ArrayList<AdsData>>, t: Throwable) {
-                //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
-            }
-        })
-    }
-
-    //get categories of recommendations
-    private fun getRecomendaciones(){
-        collectionRec = ArrayList<RecomendacionesData>()
-        val call = request.getRecommendations()
-        call.enqueue(object : Callback<ArrayList<RecomendacionesData>> {
-            override fun onResponse(call: Call<ArrayList<RecomendacionesData>>, response: Response<ArrayList<RecomendacionesData>>) {
-
-                if (response.isSuccessful){
-                    if (response.body()?.size != 0){
-
-                        for (item in response.body()!!) {
-                            collectionRec!!.add(item)
-                        }
-                    } else {
-                        //toast(activity!!, App.ERROR_TABLA_VACIA)
-                    }
-                    adapterRec = RecomendacionesAdapter(collectionRec!!)
-                    recyclerViewRec?.adapter = adapterRec
-
-                    Log.d("Comsumir Data", response.body().toString());
-
-                } else {
-                    //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
-                }
-            }
-            override fun onFailure(call: Call<ArrayList<RecomendacionesData>>, t: Throwable) {
-                //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
-            }
-        })
-    }
-
 
 }

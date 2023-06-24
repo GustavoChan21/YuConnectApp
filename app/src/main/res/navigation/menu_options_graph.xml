@@ -54,4 +54,9 @@
         android:name="com.gcdev.yuconnect.adapter.searchview.SearchViewActivity"
         android:label="activity_search_view"
         tools:layout="@layout/activity_search_view" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.gcdev.yuconnect.menus.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

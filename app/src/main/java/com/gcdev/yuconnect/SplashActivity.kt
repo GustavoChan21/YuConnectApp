@@ -16,14 +16,14 @@ class SplashActivity : AppCompatActivity() {
 
         val gifImageView = findViewById<GifImageView>(R.id.gifImageView) as GifImageView
 
-        gifImageView.setGifImageResource(R.drawable.sc_yuconnect)
+        gifImageView.setGifImageResource(R.drawable.sc_business)
 
         try {
             Handler().postDelayed({
                 val mInt = Intent(this, IntroScreenActivity::class.java)
                 startActivity(mInt)
                 finish()
-            }, 5200)
+            }, 8670)
         }catch (e:Exception){
             e.printStackTrace()
         }
