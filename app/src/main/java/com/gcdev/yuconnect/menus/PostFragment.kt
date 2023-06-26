@@ -82,10 +82,21 @@ class PostFragment : Fragment(R.layout.fragment_post) {
 //
         request = ApiClient.buildService(ApiServicesInterface::class.java)
 
-        recyclerView = requireView().findViewById<RecyclerView>(R.id.rv_parent)
-        //recyclerView.adapter = ServicesAdapter(ServiceSetData.setService())
-        getCollection()
-        recyclerView!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+//        recyclerView = requireView().findViewById<RecyclerView>(R.id.rv_parent)
+//        //recyclerView.adapter = ServicesAdapter(ServiceSetData.setService())
+//        getAgences()
+//        recyclerView!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+
+        recyclerViewAgence = requireView().findViewById<RecyclerView>(R.id.rv_parent)
+        //recyclerViewAgence!!.adapter = AdsAdapter(AdSetData.setAds())
+        getAgences()
+        recyclerViewAgence!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+//
+//
+//        recyclerViewRec = requireView().findViewById<RecyclerView>(R.id.rv_ads2)
+//        //recyclerViewRec!!.adapter = resultAdapter(Helper.setResultSearch())
+//        getRecomendaciones()
+//        recyclerViewRec!!.layoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
 
 
     }
@@ -116,6 +127,68 @@ class PostFragment : Fragment(R.layout.fragment_post) {
                 }
             }
             override fun onFailure(call: Call<ArrayList<ServicesData>>, t: Throwable) {
+                //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
+            }
+        })
+    }
+
+    //get categories of promotions
+    private fun getAgences(){
+        collectionAgence = ArrayList<AdsData>()
+        val call = request.getPromotions()
+        call.enqueue(object : Callback<ArrayList<AdsData>> {
+            override fun onResponse(call: Call<ArrayList<AdsData>>, response: Response<ArrayList<AdsData>>) {
+
+                if (response.isSuccessful){
+                    if (response.body()?.size != 0){
+
+                        for (item in response.body()!!) {
+                            collectionAgence!!.add(item)
+                        }
+                    } else {
+                        //toast(activity!!, App.ERROR_TABLA_VACIA)
+                    }
+                    adapterAgence = AdsAdapter(collectionAgence!!)
+                    recyclerViewAgence?.adapter = adapterAgence
+
+                    Log.d("Comsumir Data", response.body().toString());
+
+                } else {
+                    //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
+                }
+            }
+            override fun onFailure(call: Call<ArrayList<AdsData>>, t: Throwable) {
+                //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
+            }
+        })
+    }
+
+    //get categories of recommendations
+    private fun getRecomendaciones(){
+        collectionRec = ArrayList<RecomendacionesData>()
+        val call = request.getRecommendations()
+        call.enqueue(object : Callback<ArrayList<RecomendacionesData>> {
+            override fun onResponse(call: Call<ArrayList<RecomendacionesData>>, response: Response<ArrayList<RecomendacionesData>>) {
+
+                if (response.isSuccessful){
+                    if (response.body()?.size != 0){
+
+                        for (item in response.body()!!) {
+                            collectionRec!!.add(item)
+                        }
+                    } else {
+                        //toast(activity!!, App.ERROR_TABLA_VACIA)
+                    }
+                    adapterRec = RecomendacionesAdapter(collectionRec!!)
+                    recyclerViewRec?.adapter = adapterRec
+
+                    Log.d("Comsumir Data", response.body().toString());
+
+                } else {
+                    //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
+                }
+            }
+            override fun onFailure(call: Call<ArrayList<RecomendacionesData>>, t: Throwable) {
                 //toast(activity!!, App.ERROR_MENSAJE_CONEXION)
             }
         })

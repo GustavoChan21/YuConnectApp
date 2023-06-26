@@ -7,6 +7,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.gcdev.yuconnect.CollaboratorInfoFragment
 import com.gcdev.yuconnect.UserInfoFragment
 import com.gcdev.yuconnect.menus.PostFragment
+import com.gcdev.yuconnect.menus.PromotionsFragment
+import com.gcdev.yuconnect.menus.RecommendedFragment
 
 class FragmentTabPageAdapter(
     fragmentManager: FragmentManager,
@@ -18,11 +20,11 @@ class FragmentTabPageAdapter(
 
     override fun createFragment(position: Int): Fragment {
         return if (position == 0)
-            UserInfoFragment()
-        else if (position == 1)
-            CollaboratorInfoFragment()
-        else
             PostFragment()
+        else if (position == 1)
+            RecommendedFragment()
+        else
+            PromotionsFragment()
     }
 
 }
