@@ -183,7 +183,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="Lo Más Buscado"
+                    android:text="Popular en tu Zona"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -200,7 +200,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/addCategory1"
                     tools:ignore="MissingConstraints"
-                    tools:listitem="@layout/ad_item" />
+                    tools:listitem="@layout/rec_item" />
 
                 <TextView
                     android:id="@+id/addCategory2"
@@ -230,7 +230,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/addCategory2"
                     tools:ignore="MissingConstraints"
-                    tools:listitem="@layout/ad_item" />
+                    tools:listitem="@layout/item_festivales" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
